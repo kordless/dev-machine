@@ -1,5 +1,5 @@
 class vim {
-  package{ ['vim', 'exuberant-ctags']:
+  package{ ['vim', 'vim-nox', 'exuberant-ctags']:
     ensure  => installed
   }
 }
