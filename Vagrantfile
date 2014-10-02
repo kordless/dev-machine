@@ -10,7 +10,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.enabled = true
   config.hostmanager.manage_host = true
 
-  config.vm.network :private_network, ip: "192.168.150.2"
+  config.vm.network :private_network, ip: "172.17.8.2"
   config.vm.hostname = "dev-machine"
 
   config.vm.synced_folder ".", "/opt/dev-machine", type: "nfs"
