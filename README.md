@@ -6,3 +6,7 @@ logs in JSON format and transmit them to a central logstash instance.
 ## manual run command
 
 `journalctl -fo json | docker run --rm -i -e LOGSTASH_ADDR=logstash.example.com:5000 registry.giantswarm.io/giantswarm/logstash-forwarder`
+
+## How to obtain the correct certificate
+
+See the logstash project and copy `logstash-forwarder.crt` from there.
