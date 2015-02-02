@@ -9,4 +9,4 @@ logs in JSON format and transmit them to a central logstash instance.
 
 ## How to obtain the correct certificate
 
-See the logstash project and copy `logstash-forwarder.crt` from there.
+See the [logstash project](https://github.com/giantswarm/logstash) and copy `logstash-forwarder.crt` from there.
