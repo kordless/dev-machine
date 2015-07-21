@@ -13,10 +13,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :private_network, ip: "172.17.8.2"
   config.vm.hostname = "dev-machine"
 
-  config.vm.synced_folder ".", "/opt/dev-machine", type: "nfs"
+  config.vm.synced_folder ".", "/opt/dev-machine"
+  #config.vm.synced_folder ".", "/opt/dev-machine", type: "nfs"
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "3072"]
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
     vb.customize ["modifyvm", :id, "--nictype1", "virtio" ]
