@@ -33,10 +33,8 @@ sudo usermod -aG docker vagrant
 sudo locale-gen UTF-8
 
 sudo mkdir -p /home/vagrant/bin
-sudo chown vagrant:vagrant /home/vagrant/bin
 
 sudo mkdir -p /opt/dev-machine/projects/golang/{src,bin,pkg}
-sudo chown -R vagrant:vagrant /opt/dev-machine/projects
 
 sudo echo "export PROJECT_PATH=/opt/dev-machine/projects" >> /etc/profile
 sudo echo "export GOPATH=/opt/dev-machine/projects/golang" >> /etc/profile
