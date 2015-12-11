@@ -32,6 +32,9 @@ sudo apt-get install -y \
 sudo usermod -aG docker vagrant
 sudo locale-gen UTF-8
 
+sudo curl https://bootstrap.giantswarm.io/releaseit/latest/releaseit > /usr/local/bin/releaseit
+sudo chmod 755 /usr/local/bin/releaseit
+
 sudo mkdir -p /home/vagrant/bin
 
 sudo mkdir -p /opt/dev-machine/projects/golang/{src,bin,pkg}

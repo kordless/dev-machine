@@ -55,8 +55,8 @@ Vagrant Hostmanager is a plugin that manages the `/etc/hosts`file on guests with
 $ vagrant plugin install vagrant-hostmanager
 ```
 
-### Start the Controller Node
-The controller node is started via `vagrant` by doing the following:
+### Start the Management Node
+The management node is started via `vagrant` by doing the following:
 
 ```
 $ cd dev-machine
@@ -75,3 +75,18 @@ Issue a reboot to the machine to finish up installs:
 vagrant@vagrant-ubuntu-wily-64:~$ sudo reboot
 ```
 
+#### Log Into Giant Swarm's Docker Registry
+For now, this deployment guide requires that you log into Giant Swarm's private Docker Registry. This requires your Giant Swarm account to be a member of the `giantswarm` organization.
+
+#### Start the bootxe Container
+The bootxe container is an TFTP/ipxe server with a Dnsmasq and webserver to serve up the binaries required for deploying a new node to a GiantOS cluster. Run the following command to start the bootxe container:
+
+
+```
+$ docker run --rm -it \
+    --privileged \
+    --net=host \
+    -v $(pwd):/opt/boot/config \
+    -v $(pwd)/bin-dist/cluster:/opt/bootxe/cluster \
+    registry.giantswarm.io/giantswarm/bootxe:0.5.0 -v=12 -no-git 
+```
